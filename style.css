@@ -1,0 +1,158 @@
+:root {
+  --primary-color: rgb(253, 171, 6);
+  --secondary-color: rgb(160, 39, 39);
+  --third-color: rgb(243, 231, 10);
+  --font-family-primary: Arial, Helvetica, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-primary);
+}
+
+body .container {
+  max-width: 1200px;
+  height: 800px;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+header div {
+  color: var(--primary-color);
+  font-size: 32px;
+  font-family: var(--font-family-primary);
+  font-weight: 600;
+}
+
+header div span {
+  color: var(--secondary-color);
+}
+
+header form input {
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: rgb(239, 121, 4);
+}
+
+header form input:focus {
+  outline: none;
+  border-color: var(--third-color);
+}
+
+main {
+  padding-bottom: 100px;
+}
+
+main div {
+  padding-top: 20px;
+}
+
+main .loadPokemonCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+main .loadPokemonCards div {
+  padding: 20px;
+  width: 25%;
+}
+
+main .loadPokemonCards div div {
+  width: 50%;
+  display: inline-block;
+}
+
+main button {
+  font-size: 22px;
+  font-family: var(--font-family-primary);
+  color: #fff;
+  padding: 20px 40px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: var(--primary-color);
+  border: 4px solid var(--primary-color);
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+main button:hover {
+  color: var(--primary-color);
+  background-color: #fff;
+}
+
+main .loader {
+  box-sizing: content-box;
+  width: 150px;
+  height: 100px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 200px;
+}
+
+main div i {
+  text-align: center;
+  font-size: 24px;
+  padding: 5px;
+}
+
+div #firstDot {
+  color: var(--third-color);
+  animation: loadingDots 2.5s infinite;
+}
+
+div #secondDot {
+  color: var(--third-color);
+  animation: loadingDots 2.5s infinite;
+  animation-delay: 0.83s;
+}
+div #thirdDot {
+  color: var(--third-color);
+  animation: loadingDots 2.5s infinite;
+  animation-delay: 1.66s;
+}
+
+.cardNameText {
+  font-size: 14px;
+  font-weight: 700;
+  width: 60% !important;
+}
+.cardCharacteristicText {
+  width: 100% !important;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 5px 10px !important;
+}
+
+.cardCharacteristicText span {
+  font-weight: 500;
+}
+
+.cardNumber {
+  text-align: right;
+  font-size: 14px;
+  width: 40% !important;
+}
+
+@keyframes loadingDots {
+  0% {
+  }
+  33% {
+    color: red;
+  }
+  66% {
+    color: yellow;
+  }
+}
