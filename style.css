@@ -2,14 +2,16 @@
   --primary-color: rgb(253, 171, 6);
   --secondary-color: rgb(160, 39, 39);
   --third-color: rgb(243, 231, 10);
-  --font-family-primary: Arial, Helvetica, sans-serif;
+  --font-base: Arial, Helvetica, sans-serif;
+  --breakpoint-sm-min: (min-width: 630px);
+  --breakpoint-md-min: (min-width: 1140px);
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-base);
 }
 
 body .container {
@@ -26,14 +28,14 @@ header {
   padding-bottom: 20px;
 }
 
-header div {
+header h1 {
   color: var(--primary-color);
   font-size: 32px;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-base);
   font-weight: 600;
 }
 
-header div span {
+header h1 span {
   color: var(--secondary-color);
 }
 
@@ -76,7 +78,7 @@ main .loadPokemonCards div div {
 
 main button {
   font-size: 22px;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-base);
   color: #fff;
   padding: 20px 40px;
   margin: 0 auto;

@@ -1,11 +1,14 @@
-let input = document.querySelector("input");
+//Root elements
+let searchInput = document.querySelector("input");
 const loadPokemonCardsDiv = document.querySelector(".loadPokemonCards");
 const loadMore = document.querySelector("button");
 const loader = document.querySelector(".loader");
 let j = -1;
 let elementArray = new Array();
 
-function loadImages(dane) {
+// Consts
+
+const API = function loadImages(dane) {
   for (i = 0; i < 4; i++) {
     j += 1;
     let mainDiv = document.createElement("div");
@@ -36,7 +39,7 @@ function loadImages(dane) {
     mainDiv.appendChild(rarityDiv);
     loadPokemonCardsDiv.appendChild(mainDiv);
   }
-}
+};
 
 function loadMoreImages(dane) {
   loadMore.addEventListener("click", () => {
@@ -78,7 +81,7 @@ window.onload = async function () {
       console.log(response.status);
       let dane = response.data.data;
       console.log(dane);
-      let searchingText = input.value;
+      let searchingText = searchInput.value;
       if (searchingText == "") {
         elementArray.length = 0;
         loadImages(dane);
@@ -90,10 +93,10 @@ window.onload = async function () {
         search(dane, searchingText);
       }
 
-      input.addEventListener("change", () => {
+      searchInput.addEventListener("change", () => {
         j = -1;
         deleteChild();
-        searchingText = input.value;
+        searchingText = searchInput.value;
         search(dane, searchingText);
       });
       loadMoreImages(elementArray);
